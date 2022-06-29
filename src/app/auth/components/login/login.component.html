@@ -1,0 +1,20 @@
+<h1>INGRESAR</h1>
+
+<form [formGroup]="loginForm">
+  <input type="email" formControlName="email" />
+  <input type="password" formControlName="password" />
+
+  <input
+    type="button"
+    [disabled]="!loginForm.valid"
+    value="INGRESAR"
+    (click)="ingresar()"
+  />
+  <button type="button" [disabled]="!loginForm.valid" (click)="ingresar()">
+    B INGRESAR
+  </button>
+</form>
+
+{{ loginForm.value | json }}
+<hr />
+VALIDO? :{{ loginForm.valid }}
