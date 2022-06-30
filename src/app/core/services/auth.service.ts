@@ -19,4 +19,8 @@ export class AuthService {
     return this.http.post(`${this.urlBase}/v1/auth/login`, datos)
   }
 
+  pedirPerfil(){
+    return this.http.get(`${this.urlBase}/v1/auth/perfil`)  
+  }
+
 }
