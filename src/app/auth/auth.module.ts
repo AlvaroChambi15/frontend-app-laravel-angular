@@ -8,6 +8,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+
+// IMPORTANTO CORE MODULE PARA UTILIZAR TODOS LOS SERVICIOS
 import { CoreModule } from './../core/core.module';
 
 
