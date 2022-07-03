@@ -1,0 +1,26 @@
+<div class="card">
+  <h5>Gestión Categorias</h5>
+
+  <form [formGroup]="categoriaForm">
+    <input type="text" formControlName="nombre" />
+    <input type="text" formControlName="descripcion" />
+    <button (click)="guardarCategoria()">GUARDAR</button>
+  </form>
+  <!-- {{ listaCategorias | json }} -->
+
+  <h5>Modal</h5>
+  <p-button (click)="showModalCategoriaDialog()" icon="pi pi-external-link" label="Show"></p-button>
+  <p-dialog header="Header" [(visible)]="displayModalCategoria" [modal]="true" [style]="{ width: '50vw' }"
+    [draggable]="false" [resizable]="false">
+
+
+
+
+    <ng-template pTemplate="footer">
+      <p-button icon="pi pi-check" (click)="displayModalCategoria = false" label="Ok" styleClass="p-button-text">
+      </p-button>
+    </ng-template>
+  </p-dialog>
+</div>
+
+<!--{{ categoriaForm.value | json }}-->

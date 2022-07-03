@@ -12,6 +12,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 // IMPORTANTO CORE MODULE PARA UTILIZAR TODOS LOS SERVICIOS
 import { CoreModule } from './../core/core.module';
 
+//PARA PRIMENG
+import { PrimengModule } from '../primeng/primeng.module';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +26,8 @@ import { CoreModule } from './../core/core.module';
     AuthRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    CoreModule
+    CoreModule,
+    PrimengModule
   ]
 })
 export class AuthModule { }

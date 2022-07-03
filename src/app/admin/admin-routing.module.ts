@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppMainComponent } from '../app.main.component';
 import { AuthGuard } from '../guards/auth.guard';
+import { CategoriaComponent } from './components/categoria/categoria.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 
 const routes: Routes = [
@@ -12,6 +13,11 @@ const routes: Routes = [
       {
         path: "perfil", 
         component: PerfilComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: "categoria",
+        component: CategoriaComponent,
         canActivate: [AuthGuard]
       }
     ]
