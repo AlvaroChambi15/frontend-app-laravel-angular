@@ -4,14 +4,14 @@ import { AppMainComponent } from '../app.main.component';
 import { AuthGuard } from '../guards/auth.guard';
 import { CategoriaComponent } from './components/categoria/categoria.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
+import { ProductoComponent } from './components/producto/producto.component';
 
 const routes: Routes = [
   {
-    path:'',
-    component: AppMainComponent,
+    path: '', component: AppMainComponent,
     children: [
       {
-        path: "perfil", 
+        path: "perfil",
         component: PerfilComponent,
         canActivate: [AuthGuard]
       },
@@ -19,10 +19,15 @@ const routes: Routes = [
         path: "categoria",
         component: CategoriaComponent,
         canActivate: [AuthGuard]
+      },
+      {
+        path: "producto",
+        component: ProductoComponent,
+        canActivate: [AuthGuard]
       }
     ]
   }
-  
+
 ];
 
 @NgModule({

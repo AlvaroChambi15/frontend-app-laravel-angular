@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
 export class CategoriaService {
 
   urlBase = environment.servidor
+  
   constructor(private http: HttpClient) { }
 
   indexCategoria(){

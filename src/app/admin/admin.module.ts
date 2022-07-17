@@ -7,12 +7,14 @@ import { CoreModule } from '../core/core.module';
 import { CategoriaComponent } from './components/categoria/categoria.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PrimengModule } from '../primeng/primeng.module';
+import { ProductoComponent } from './components/producto/producto.component';
 
 
 @NgModule({
   declarations: [
     PerfilComponent,
-    CategoriaComponent
+    CategoriaComponent,
+    ProductoComponent
   ],
   imports: [
     CommonModule,
