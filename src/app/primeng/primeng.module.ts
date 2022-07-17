@@ -86,6 +86,7 @@ import { TreeSelectModule } from 'primeng/treeselect';
 import { TreeTableModule } from 'primeng/treetable';
 import { VirtualScrollerModule } from 'primeng/virtualscroller';
 
+
 const modulosPrimeNg = [
   AccordionModule,
         AutoCompleteModule,
