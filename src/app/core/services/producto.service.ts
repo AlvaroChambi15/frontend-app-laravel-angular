@@ -11,8 +11,8 @@ export class ProductoService {
 
   constructor(private http: HttpClient) { }
 
-  indexProducto() {
-    return this.http.get(`${this.urlBase}/producto`)
+  indexProducto(page = 1) {
+    return this.http.get(`${this.urlBase}/producto?page=${page}`)
   }
 
   storeProducto(datos: any) {
