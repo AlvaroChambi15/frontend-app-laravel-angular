@@ -53,12 +53,22 @@
           <p-tableCheckbox [value]="product"></p-tableCheckbox>
         </td>
         <td>{{product.nombre}}</td>
-        <td><img [src]="'assets/showcase/images/demo/product/' + product.image" [alt]="product.name" width="100"
-            class="shadow-4" /></td>
+        <td>
+
+          <img [src]="'https://app-ventas-lavang.herokuapp.com/' + product.imagen" [alt]="product.name" width="100"
+            class="shadow-4" />
+
+
+        </td>
         <td>{{product.precio | currency:'Bs. '}}</td>
         <td>{{product.stock }}</td>
         <td>{{product.categoria.nombre}}</td>
         <td>
+          <!-- <p-button (click)="showModalDialogImagen(product)" icon="pi pi-external-link" label="Show"></p-button> -->
+
+          <button pButton pRipple icon="pi pi-image" class="p-button-rounded p-button-secondary p-button-outlined mr-2"
+            (click)="showModalDialogImagen(product)"></button>
+
           <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"
             (click)="editProduct(product)"></button>
           <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
@@ -123,6 +133,26 @@
     <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
     <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="saveProduct()"></button>
   </ng-template>
+</p-dialog>
+
+<!-- header="Subir Imagen" -->
+
+<p-dialog [(visible)]="displayModalImagen" [modal]="true" [style]="{width: '50vw'}" [draggable]="false"
+  [resizable]="false" [closable]="false">
+  <ng-template pTemplate="header">
+
+    <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+      <label for="" style="display:block; position: relative; font-size: 1.25rem;font-weight: 700;">Subir
+        Imagen</label>
+
+      <button (click)="closeDialogImage()" pButton style="display:block; float:right; position: relative;" pRipple
+        type="button" icon="pi pi-times" class="p-button-rounded p-button-secondary p-button-text"></button>
+    </div>
+
+  </ng-template>
+
+  <p-fileUpload #uploader (onBeforeUpload)="onBeforeUploadListener($event, uploader)"></p-fileUpload>
+
 </p-dialog>
 
 <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
