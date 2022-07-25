@@ -44,7 +44,7 @@ export class ProductoComponent implements OnInit {
 
   statuses: any[];
 
-  categorias: string;
+  categorias: any[];
 
   page: number;
 
@@ -133,7 +133,7 @@ export class ProductoComponent implements OnInit {
         this.productoService.updateProducto(this.product, this.product.id).subscribe(
           (res: any) => {
             this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Producto Modificado!', life: 3000 });
-            // this.listarProductos(this.page);
+            this.listarProductos(this.page);
           }
           ,
           (error: any) => {
@@ -147,7 +147,7 @@ export class ProductoComponent implements OnInit {
         this.productoService.storeProducto(this.product).subscribe(
           (res: any) => {
             this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Producto Creado', life: 3000 });
-            // this.listarProductos(this.lastPage);
+            this.listarProductos(this.lastPage);
           },
           (error: any) => {
             alert(error);
@@ -157,7 +157,7 @@ export class ProductoComponent implements OnInit {
       }
 
       // LISTAR PRODUCTOS
-      this.listarProductos(this.page);
+      // this.listarProductos(this.page);
       this.productDialog = false;
       this.product = { nombre: "", precio: 0, stock: 0, descripcion: '', categoria_id: 0 };
     }

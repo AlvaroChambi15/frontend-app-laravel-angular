@@ -16,7 +16,7 @@
     </ng-template>
   </p-toolbar>
 
-  <p-table #dt [value]="products" [rows]="2" [paginator]="true" [lazy]="true" (onLazyLoad)="loadProductos($event)"
+  <p-table #dt [value]="products" [rows]="10" [paginator]="true" [lazy]="true" (onLazyLoad)="loadProductos($event)"
     [globalFilterFields]="['name','country.name','representative.name','status']" responsiveLayout="scroll"
     [(selection)]="selectedProducts" [rowHover]="true" dataKey="id" [totalRecords]="totalRecords" [loading]="loading"
     currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} registros" [showCurrentPageReport]="true">
@@ -142,7 +142,8 @@
   <ng-template pTemplate="header">
 
     <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
-      <label for="" style="display:block; position: relative; font-size: 1.25rem;font-weight: 700;">Subir
+
+      <label for="">Subir
         Imagen</label>
 
       <button (click)="closeDialogImage()" pButton style="display:block; float:right; position: relative;" pRipple
