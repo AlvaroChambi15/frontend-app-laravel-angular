@@ -14,12 +14,16 @@ import { CoreModule } from './../core/core.module';
 
 //PARA PRIMENG
 import { PrimengModule } from '../primeng/primeng.module';
+import { ResetComponent } from './components/reset/reset.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    ResetComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     CommonModule,

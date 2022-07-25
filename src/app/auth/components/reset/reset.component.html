@@ -1,0 +1,80 @@
+<!-- {{ reset.token }} -->
+
+
+<div style="margin:30px" styleClass="p-fluid">
+
+  <div *ngIf="resetPass" class="card" style="margin: auto;width: 500px ;padding: 40px;">
+
+    <h1 class="text-center">REESTABLECER LA CONTRASEÑA</h1>
+
+    <div class="field">
+      <label for="name">Token</label><br>
+      <input disabled type="text" pInputText id="name" style="width: 100%;" [(ngModel)]="reset.token" required />
+      <small class="p-error" *ngIf="submitted && !reset.token">Token is required.</small>
+    </div>
+    <div class="field">
+      <label for="name">Email</label><br>
+      <input type="text" pInputText id="name" style="width: 100%;" [(ngModel)]="reset.email" required />
+      <small class="p-error" *ngIf="submitted && !reset.email">Email is required.</small>
+    </div>
+    <div class="field">
+      <label for="name">Nueva Contraseña</label><br>
+      <input type="text" pInputText id="name" style="width: 100%;" [(ngModel)]="reset.password" required />
+      <small class="p-error" *ngIf="submitted && !reset.email">Email is required.</small>
+    </div>
+    <div class="field">
+      <label for="name">Confirmar Contraseña</label><br>
+      <input type="text" pInputText id="name" style="width: 100%;" [(ngModel)]="reset.password_confirmation" required />
+      <small class="p-error" *ngIf="submitted && !reset.email">Email is required.</small>
+    </div>
+    <hr>
+    <div class="flex justify-content-center">
+      <button (click)="resetP()" pButton style="width: 100%;" label="Reestablecer la
+      contraseña"></button>
+    </div>
+  </div>
+
+  <!--  -->
+
+  <div *ngIf="emailChange" class="card" style="margin: auto;width: 500px ;padding: 40px;text-align:center;">
+
+
+    <div class="field">
+      <h2 class="text-center"><b>RESTABLECER SU CONTRASEÑA</b> </h2>
+    </div>
+    <p-messages severity="success">
+      <ng-template pTemplate>
+        <i class="pi pi-check" style="font-size: 2rem; margin-right: 15px;"></i>
+        <div class="ml-2" style="font-size: 16px;">Su contraseña a sido cambiada con exito!.</div>
+      </ng-template>
+    </p-messages>
+
+    <button routerLink="/auth/login" pButton label="Volver al Login" style="width: 100%;"></button>
+
+  </div>
+
+  <!--  -->
+
+  <div *ngIf="changeEmailFail" class="card" style="margin: auto;width: 500px ;padding: 40px;text-align:center;">
+
+
+    <div class="field">
+      <h2 class="text-center"><b>RESTABLECER SU CONTRASEÑA</b> </h2>
+    </div>
+    <p-messages severity="error">
+      <ng-template pTemplate>
+        <i class="pi pi-times" style="font-size: 2rem; margin-right: 15px;"></i>
+        <div class="ml-2" style="font-size: 16px;">A ocurrido un error al cambiar su contraseña!.</div>
+      </ng-template>
+    </p-messages>
+
+    <button routerLink="/auth/login" pButton label="Volver al Login" style="width: 100%;"></button>
+
+  </div>
+
+  <!--  -->
+
+
+  <hr>
+
+</div>
