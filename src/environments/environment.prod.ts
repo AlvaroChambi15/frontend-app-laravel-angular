@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  servidor: "https://app-ventas-lavang.herokuapp.com/api"
 };
