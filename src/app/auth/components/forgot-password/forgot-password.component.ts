@@ -39,34 +39,33 @@ export class ForgotPasswordComponent implements OnInit {
     this.loading = true;
 
     setTimeout(() => {
-      this.loading = false;
 
       // alert(this.datos.email)
 
       this.authService.forgotPass(this.datos).subscribe(
         (res: any) => {
           console.log(res);
+          this.loading = false;
           this.emailSend = true;
         },
         (error: any) => {
           console.log(error);
           console.log(error.error.mensaje);
+          this.loading = false;
 
           if (error.error.mensaje == 'NO EXISTE') {
             console.log("mostrar ERROR DE QUE NO EXISTE");
+
             this.emailNotExist = true;
           } else {
             console.log("mostrar ERROR DE QUE ALGO SALIO MAL");
             this.emailFail = true;
           }
 
-
-
-
         }
       )
 
-    }, 2000);
+    });
 
     // if (Object.keys(this.responseEmail).length === 0) {
     //   console.log("SI HAY CORREO");
