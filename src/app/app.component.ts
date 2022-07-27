@@ -14,7 +14,7 @@ export class AppComponent {
   constructor(private primengConfig: PrimeNGConfig) { }
 
   ngOnInit() {
-      this.primengConfig.ripple = true;
-      document.documentElement.style.fontSize = '14px';
+    this.primengConfig.ripple = true;
+    document.documentElement.style.fontSize = '14px';
   }
 }

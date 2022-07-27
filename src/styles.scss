@@ -9,3 +9,34 @@
 @import "assets/sass/layout/_variables";
 @import "assets/sass/layout/_layout";
 @import "assets/sass/overrides/_overrides";
+
+body {
+    overflow-y: overlay;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+    /* display: none; */
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgba(161, 161, 161, 0.479);
+    border-radius: 4px;
+}
+
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+body::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Cambiamos el fondo cuando esté en active */
+body::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+}
+
+/*  */
+body::-webkit-scrollbar-track {
+    background: #e1e1e100;
+    border-radius: 4px;
+}
